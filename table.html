@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		table{
+			border: 1px solid silver;
+			border-radius: 3px;
+			margin: 0 0 30px 0;
+			width: 900px;						
+			}
+
+				tr{
+					background: silver;
+					border:1px solid silver;
+					border-radius: 2px;
+				}
+
+					td {border:1px solid silver;
+					 border-radius:2px;
+					 text-align: center;
+					}
+					th {border:1px solid silver;
+					 border-radius:2px;
+					 text-align: center;
+					}
+
+			
+
+			
+			
+		</style>
+</head>
+<body>
+
+	<script type="text/javascript">
+		var table=document.createElement("table");		
+
+		var objHeader={};
+		
+
+		var arr=[
+		{
+			name:"Volod",
+			age:43,			
+			gender:"man",
+			sity: "Zapor",
+			street:"Ivanova",
+			home:17,			
+		},
+		{
+			name:"Andriy",
+			age:25,
+			surname:"Vovk",
+			gender:"man",			
+			home:12,			
+		},
+		{
+			name:"Yana",
+			age:28,
+			surname:"Marusenko",			
+			sity: "Zapor",
+			street:"Soborny",						
+		},
+		{
+			name:"Stas",
+			age:38,			
+			gender:"man",
+			sity: "Zapor",
+			street:"Fortechna",
+			home:29,			
+		},
+		{
+			name:"Hanna",
+			age:41,
+			surname:"Yatsenco",
+			gender:"woman",
+			sity: "Zapor",			
+			home:88,			
+		},
+		{
+			name:"Arishka",
+			age:27,
+			surname:"Podolyanska",
+			gender:"woman",
+			sity: "Zapor",
+			street:"Shevchenko",
+			home:149,			
+		},
+		{			
+			age:48,
+			surname:"Kruchina",
+			gender:"man",
+			sity: "Zapor",
+			street:"Skvortsova",
+			home:41,			
+		},
+		{
+			name:"Zabava",
+			age:24,
+			surname:"Bojco",
+			gender:"woman",
+			sity: "Zapor",			
+			home:4,			
+		},
+		{
+			name:"Bogdan",
+			age:34,
+			surname:"Pylypenko",
+			gender:"man",
+			sity: "Zapor",
+			street:"Evropeyska",
+			home:63,			
+		},
+		{
+			name:"Kvitka",
+			age:24,
+			surname:"Stepova",
+			gender:"woman",						
+		},		
+		];
+
+
+
+		arr.forEach(function(item){//Залітає об'єкт			
+			for(var dat in item){//Перебор об'єкта				
+				objHeader[dat]="Інформація відсутня";			
+			}			
+		})
+
+		var header=Object.keys(objHeader)		
+
+		arr.forEach(function(item,index){//Залітає об'єкт			
+			arr[index]=Object.assign({},objHeader,item);			
+		})
+
+
+		var tr=document.createElement("tr");
+			header.forEach(function(item,index){	
+				var th=document.createElement("th");
+				th.innerText=item;
+				tr.append(th);								
+		})
+			table.append(tr);
+
+		arr.forEach(function(item,index){
+			var tr=document.createElement("tr");
+			for(var dat in item){
+				var td=document.createElement("td");
+				td.innerText=item[dat];
+				tr.append(td)
+			}
+			table.append(tr);
+		})		
+
+			document.body.append(table);
+
+
+	</script>
+
+</body>
+</html>
